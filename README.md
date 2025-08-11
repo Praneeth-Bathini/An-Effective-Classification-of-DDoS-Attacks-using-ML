@@ -95,11 +95,15 @@ An-Effective-Classification-of-DDoS-Attacks-using-ML/
 
 ## 📌 Usage
 Admin Login → Upload training dataset → Select ML algorithm → Train model.
+
 User Login → Upload test dataset → View predictions.
+
 Metrics → See accuracy, precision, recall, and F1-score in the interface.
 
 ## 🔮 Future Enhancements
 Real-time DDoS detection from live network traffic.
+
 Deep learning integration (LSTM/GRU).
+
 Advanced analytics dashboard with live charts.
 
