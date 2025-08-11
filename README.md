@@ -70,7 +70,7 @@ graph TD;
 
 
 <pre> 
-## 📂 Project Structure
+ 📂 Project Structure
 An-Effective-Classification-of-DDoS-Attacks-using-ML/
 │── application/
 │   ├── views.py           # Core logic
