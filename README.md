@@ -40,3 +40,52 @@ graph TD;
     E --> F[Upload Test Data]
     F --> G[Model Prediction]
     G --> H[Metrics & Visualization]
+
+
+🧹 Data Preprocessing Steps
+📥 Data Collection – Upload raw network traffic dataset.
+
+🧾 Handling Missing Values – Remove/impute null values.
+
+🔍 Feature Selection – Select first 22 relevant features.
+
+🔢 Label Encoding – Convert categorical columns (src, dst, Protocol) into numeric values.
+
+🧹 Data Cleaning – Remove duplicates & inconsistent entries.
+
+✂ Train-Test Split – 80% training, 20% testing using train_test_split.
+
+📏 Feature Scaling (Optional) – Standardize data if needed for ML models.
+
+
+📊 Model Performance (Example Values – Replace with Your Results)
+Model	Accuracy	Precision	Recall	F1-Score
+🌲 Random Forest	98%	97%	98%	97%
+💡 LightGBM	97%	96%	97%	96%
+🔍 KNN	95%	94%	95%	94%
+
+
+📂 Project Structure
+An-Effective-Classification-of-DDoS-Attacks-using-ML/
+│── application/
+│   ├── views.py           # Core logic
+│   ├── models.py          # Django models
+│   ├── admin.py           # Admin config
+│   ├── apps.py            # App settings
+│   ├── tests.py           # Unit tests
+│── templates/
+│   ├── Home.html
+│   ├── prediction.html
+│   ├── login.html
+│   ├── register.html
+│── static/                # CSS, JS, Images
+│── RandomForestClassifier.pkl
+│── KNN.pkl
+│── test.csv
+│── manage.py
+
+
+📌 Usage
+**Admin Login** → Upload training dataset → Select ML algorithm → Train model.
+**User Login** → Upload test dataset → View predictions.
+**Metrics** → See accuracy, precision, recall, and F1-score in the interface.
