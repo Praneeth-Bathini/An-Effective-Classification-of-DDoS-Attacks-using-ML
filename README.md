@@ -69,27 +69,26 @@ graph TD;
 | 🔍 KNN           | 95%      | 94%       | 95%    | 94%      |
 
 
+<pre> 
 ## 📂 Project Structure
 An-Effective-Classification-of-DDoS-Attacks-using-ML/
-│── application/ # Django app folder
-│ ├── views.py # Core logic for ML & predictions
-│ ├── models.py # Django ORM models
-│ ├── admin.py # Admin configuration
-│ ├── apps.py # App settings
-│ ├── tests.py # Unit tests
-│
-│── templates/ # HTML templates
-│ ├── Home.html
-│ ├── prediction.html
-│ ├── login.html
-│ ├── register.html
-│
-│── static/ # CSS, JS, and images
-│
-│── RandomForestClassifier.pkl # Saved Random Forest model
-│── KNN.pkl # Saved KNN model
-│── test.csv # Test dataset
-│── manage.py # Django management script
+│── application/
+│   ├── views.py           # Core logic
+│   ├── models.py          # Django models
+│   ├── admin.py           # Admin config
+│   ├── apps.py            # App settings
+│   ├── tests.py           # Unit tests
+│── templates/
+│   ├── Home.html
+│   ├── prediction.html
+│   ├── login.html
+│   ├── register.html
+│── static/                # CSS, JS, Images
+│── RandomForestClassifier.pkl
+│── KNN.pkl
+│── test.csv
+│── manage.py
+</pre> 
 
 
 ## ⚡ How It Works
