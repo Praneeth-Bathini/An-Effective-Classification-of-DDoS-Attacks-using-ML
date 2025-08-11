@@ -42,6 +42,7 @@ graph TD;
     G --> H[Metrics & Visualization]
 
 
+
 🧹 Data Preprocessing Steps
 📥 Data Collection – Upload raw network traffic dataset.
 
@@ -86,6 +87,6 @@ An-Effective-Classification-of-DDoS-Attacks-using-ML/
 
 
 📌 Usage
-**Admin Login** → Upload training dataset → Select ML algorithm → Train model.
-**User Login** → Upload test dataset → View predictions.
-**Metrics** → See accuracy, precision, recall, and F1-score in the interface.
+Admin Login → Upload training dataset → Select ML algorithm → Train model.
+User Login → Upload test dataset → View predictions.
+Metrics → See accuracy, precision, recall, and F1-score in the interface.
