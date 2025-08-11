@@ -61,10 +61,12 @@ graph TD;
 
 
 ## 📊 Model Performance (Example Values – Replace with Your Results)
-Model	           Accuracy	   Precision	Recall	 F1-Score
-🌲 Random Forest	 98%	    97%	        98%	       97%
-💡 LightGBM	         97%	    96%	        97%	       96%
-🔍 KNN	             95%	    94%	        95%	       94%
+
+| Model            | Accuracy | Precision | Recall | F1-Score |
+|------------------|----------|-----------|--------|----------|
+| 🌲 Random Forest | 98%      | 97%       | 98%    | 97%      |
+| 💡 LightGBM      | 97%      | 96%       | 97%    | 96%      |
+| 🔍 KNN           | 95%      | 94%       | 95%    | 94%      |
 
 
 ## 📂 Project Structure
