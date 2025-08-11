@@ -1,4 +1,4 @@
-An Effective Classification of DDoS Attacks using Machine Learning
+**An Effective Classification of DDoS Attacks using Machine Learning**
 
 📖 Overview
 An Effective Classification of DDoS Attacks using Machine Learning is a web-based detection system built with Django and machine learning models to accurately identify Distributed Denial-of-Service (DDoS) attacks in network traffic.
@@ -9,13 +9,34 @@ By combining data preprocessing, intelligent feature encoding, and robust evalua
 Why this project?
 DDoS attacks are among the most disruptive cybersecurity threats. This project demonstrates how machine learning can be used to detect such attacks effectively.
 
-✨ Key Features
+## ✨ Key Features
 | Feature | Description |
 |---------|-------------|
-| 🔐 User Authentication | Secure login & signup with Admin/User roles |
+| 🔐 **User Authentication** | Secure login & signup with Admin/User roles |
 | 📂 **CSV Upload** | Upload datasets in `.csv` format |
 | ⚙ **Data Preprocessing** | Cleans, encodes, and splits data for ML |
 | 🤖 **Multiple ML Models** | Random Forest, LightGBM, KNN |
 | 📊 **Performance Metrics** | Accuracy, Precision, Recall, F1-Score, Confusion Matrix |
 | 💾 **Model Persistence** | Save & load trained models via Joblib |
 | 🖥 **Prediction Interface** | Upload test data for instant classification |
+
+## 🛠 Tech Stack
+| Category | Tools |
+|----------|-------|
+| **Backend** | Django |
+| **Machine Learning** | scikit-learn, LightGBM |
+| **Data Processing** | Pandas, NumPy |
+| **Visualization** | Matplotlib, Seaborn |
+| **Model Storage** | Joblib |
+| **Authentication** | Django's built-in auth system |
+
+## ⚡ Workflow Diagram
+```mermaid
+graph TD;
+    A[Upload Dataset] --> B[Data Preprocessing]
+    B --> C[Train-Test Split]
+    C --> D[Train Model]
+    D --> E[Save Trained Model]
+    E --> F[Upload Test Data]
+    F --> G[Model Prediction]
+    G --> H[Metrics & Visualization]
