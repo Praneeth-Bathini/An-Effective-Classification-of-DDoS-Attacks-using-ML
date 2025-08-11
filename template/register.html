@@ -1,0 +1,147 @@
+{% extends 'Base.html' %}
+{% load static %}
+{% block main %}
+<style>
+    .inFormBackground {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .circle {
+        position: absolute;
+        border-radius: 50%;
+        background-color: #6c757d;
+        opacity: 0.2;
+    }
+    
+    .circle:nth-child(1) {
+        width: 200px;
+        height: 200px;
+        top: 10%;
+        left: 15%;
+    }
+    
+    .circle:nth-child(2) {
+        width: 300px;
+        height: 300px;
+        bottom: 10%;
+        right: 10%;
+    }
+    label{
+        color: #030303;
+    }
+    .inLoginForm {
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid black ;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 70%;
+    }
+    
+    .form-columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    
+    .inputGroup {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+    
+    .inputGroup label {
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: black;
+    }
+    
+    .inputGroup input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    section{
+        height: 440px;
+    }
+    .submitForm {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #0ce2d0;
+        color: #ccc;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-left: 250px;
+        margin-top: 30px;
+    }
+    @media (max-width: 600px) {
+        .form-columns {
+            grid-template-columns: 1fr;
+        }
+        .inFormBackground{
+            padding:0;
+            margin:0;
+        }
+        .inLoginForm{
+            width:250px;
+            margin:0;
+        }
+        .circle{
+            display:none
+        }
+    }
+
+</style>
+<div style="position: absolute;color:red;margin-top:-40px;margin-left:400px">
+    {% if messages %}
+    {% for message in messages %}
+        <p>{{ message }}</p>
+    {% endfor %}
+    {% endif %}
+</div>
+<div class="inFormBackground">
+    <div class="inLoginForm">
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="form-columns">
+                <div class="inputGroup">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter Name" required>
+                </div>
+                <div class="inputGroup">
+                    <label for="mobile">Mobile</label>
+                    <input type="tel" id="mobile" name="mobile" placeholder="Enter Mobile Number" required>
+                </div>
+                <div class="inputGroup">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter Email" required>
+                </div>
+                <div class="inputGroup">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter Username" required>
+                </div>
+                <div class="inputGroup">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter Password" required>
+                </div>
+                <div class="inputGroup">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="cnfm_password" placeholder="Enter Password" required>
+                </div>
+                <div  style="display:flex;">
+                    <label style="cursor: pointer;margin-right:20px;color:black">
+                        <input type="radio" name="role" value="admin" id="adminRadio"> Admin
+                    </label>
+                    <label style="cursor: pointer;color:black">
+                        <input type="radio" name="role" value="user" id="userRadio" > User
+                    </label>
+                </div>
+            </div>
+            <button class="submitForm" style="color:black">Register</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

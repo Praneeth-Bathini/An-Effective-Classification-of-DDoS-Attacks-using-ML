@@ -1,0 +1,330 @@
+{% extends 'Base.html' %}
+{% load static %}
+{% block main %}
+<style>
+    .inFormBackground {
+        justify-content: center;
+        align-items: center;
+        margin-top: 60px;
+    }
+    section{
+        height: 350px;
+    }
+    .overflow{
+        overflow: scroll;
+        height: 350px;
+        margin-top: -59px;
+        background-color: aliceblue;
+    }
+    .file-upload-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+    }
+    .file-upload-container input[type="file"] {
+        font-size: 16px;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        background-color: #f7f9fc;
+        transition: border-color 0.3s ease;
+        cursor: pointer;
+    }
+
+    .file-upload-container input[type="file"]:focus {
+        border-color: #007BFF;
+        outline: none;
+        cursor: pointer;
+    }
+    .file-upload-container label{
+        color: #f7f9fc;
+        padding: 20px;
+        font-size: 20px;
+    }
+    .file-upload-container button {
+        padding: 10px 20px;
+        background-color:#0ce2d0;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+    }
+    .prediction{
+        width: 980px;
+        height: 350px;
+        overflow: scroll;
+        margin-top: -60px;
+    }
+    .file-upload-container button:hover {
+        background-color: #0056b3;
+    }
+    table {
+        width: 50%;
+        margin: 0 auto;
+        border-collapse: collapse;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    th, td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background-color:#0ce2d0;
+        color: white;
+    }
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    tr:hover {
+        background-color: #ddd;
+    }
+    caption {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+</style>
+<div class="inFormBackground">
+    {% if algorithm %}
+    <div style="margin-top: -60px;">
+        <table>
+            <caption style="color: #000000;">PERFORMANCE METRICS EVALUATION</caption>
+            <thead>
+                <tr>
+                    <th>{{algorithm}}</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>accuracy</td>
+                    <td>{{accuracy}}</td>
+                </tr>
+                <tr>
+                    <td>precision</td>
+                    <td>{{precision}}</td>
+                </tr>
+                <tr>
+                    <td>recall</td>
+                    <td>{{recall}}</td>
+                </tr>
+                <tr>
+                    <td>fscore</td>
+                    <td>{{fscore}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+    {% if temp %}
+    {{temp | safe}}
+    {% endif %}
+    {% if data %}
+    <style>
+        .row-data .message {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        #results{
+            overflow-y: scroll;
+            height: 270px;
+            border:1px solid black;
+            border-radius: 10px;
+            padding-left:20px ;
+        }
+        section{
+            height: 340px;
+        }
+    </style>
+    <div style="margin-left: 30px;height:300px;margin-right: 20px;margin-top:-50px">
+        <h1 style="margin-bottom: 20px;">Prediction Results</h1>
+        <div id="results">
+            {% for item in data %}
+                <div class="row-data">
+                    <pre>{{ item.row }}</pre>  <!-- This will display the row data -->
+                    <p class="message">{{ item.message }}</p>  <!-- This will display the message -->
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+    {% if predict %}
+    <div class="prediction">
+        {{predict | safe}}
+    </div>
+    {% endif %}
+    {% if test %}
+<style>
+/* Form Container */
+form {
+    width: 80%;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid black;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title or Heading */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Message Section */
+p {
+    font-size: 14px;
+    color: #d9534f;
+    text-align: center;
+}
+
+/* Input Group Styling */
+.inputGroup {
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="file"] {
+    width: 95%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14p
+}   
+.submitForm {
+    background-color: #0ce2d0;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    transition: background-color 0.3s ease;
+}
+
+.submitForm:hover {
+    background-color: #45a049;
+}
+
+/* Centering the form content */
+.submitForm {
+    width: auto;
+}     
+</style>
+{% if messages %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    <form action="{% url 'prediction' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+            <div class="inputGroup">
+                <label for="name">Test File </label>
+                <input type="file" id="name" name="file" placeholder="Enter Name" required style="cursor: pointer;">
+            </div>
+        <button class="submitForm" style="margin-left:200px">Predict</button>
+    </form>
+    {% endif %}
+</div>
+{% if upload %}
+<style>
+form {
+    width: 80%;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid black;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title or Heading */
+
+/* Message Section */
+p {
+    font-size: 14px;
+    color: #d9534f;
+    text-align: center;
+}
+
+/* Input Group Styling */
+.inputGroup {
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="file"] {
+    width: 95%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14p
+}   
+.submitForm {
+    background-color:#0ce2d0;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    transition: background-color 0.3s ease;
+}
+
+.submitForm:hover {
+    background-color: #45a049;
+}
+
+/* Centering the form content */
+.submitForm {
+    width: auto;
+}     
+</style>
+    <form action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+            <div class="inputGroup">
+                <label for="name">Dataset </label>
+                <input type="file" id="name" name="file" placeholder="Enter Name" required style="cursor: pointer;">
+            </div>
+        <button class="submitForm" style="margin-left:200px">Upload & Split</button>
+    </form>
+    {% endif %}
+</div>
+{% endblock %}
