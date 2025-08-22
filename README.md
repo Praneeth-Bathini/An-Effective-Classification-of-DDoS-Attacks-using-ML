@@ -60,7 +60,7 @@ graph TD;
 📏 Feature Scaling (Optional) – Standardize data if needed for ML models.
 
 
-## 📊 Model Performance (Example Values – Replace with Your Results)
+## 📊 Model Performance
 
 | Model            | Accuracy | Precision | Recall | F1-Score |
 |------------------|----------|-----------|--------|----------|
